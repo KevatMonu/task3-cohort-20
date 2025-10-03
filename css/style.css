@@ -319,7 +319,7 @@
 .car-image {
     position: absolute;
     bottom: 2.5vw;
-    left: -20vw; 
+    left: -40vw; 
     width: 20vw;
     z-index: 3;
     cursor: pointer;
