@@ -1,11 +1,11 @@
 @font-face {
             font-family: "font1";
-            src: url(./font/porsche-next-latin-regular.b8f1c20.woff2);
+            src: url(../font/porsche-next.otf);
         }
 
         @font-face {
             font-family: "font2";
-            src: url(./font/porsche-next-latin-semi-bold.b5f6fca.woff2);
+            src: url(../font/porsche-next-semibold.otf);
         }
 
         @font-face {
