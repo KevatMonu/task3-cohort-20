@@ -1,17 +1,18 @@
 @font-face {
-            font-family: "font1";
-            src: url(../font/porsche-next.otf);
-        }
+  font-family: "font1";
+  src: url("../font/porsche-next.woff2") format("woff2");
+}
 
-        @font-face {
-            font-family: "font2";
-            src: url(../font/porsche-next-semibold.otf);
-        }
+@font-face {
+  font-family: "font2";
+  src: url("../font/porsche-next-semibold.woff2") format("woff2");
+}
 
-        @font-face {
-            font-family: "porsche";
-            src: url(./font/SK\ Porsche.ttf);
-        }
+@font-face {
+  font-family: "porsche";
+  src: url("../font/SK-Porsc.woff2") format("woff2");
+}
+
         
         * {
             margin: 0;
