@@ -1,4 +1,4 @@
-# 🚀 Porsche 911 GT3 RS – Hero Section
+# 🚀 Porsche 911 GT3 RS 
 
 This is my Hero Section project showcasing the **Porsche 911 GT3 RS**.  
 Inspired by modern automotive landing pages, it focuses on immersive visuals, animated car entrances, and smooth GSAP-powered interactions.
@@ -41,22 +41,22 @@ Inspired by modern automotive landing pages, it focuses on immersive visuals, an
 
 ## 📂 Project Structure
 
-porsche-911-hero/
-│── index.html # Landing Page (Hero Section with GSAP animations)
-│── css/
-│ └── style.css # Styling for the landing page
-│── js/
-│ └── script.js # GSAP animations & interactivity
-│── asset/
-│ ├── car.png
-│ ├── car2.png
-│ ├── car3.png
-│ ├── Porsche 911 GT3 RS.mp4
-│ ├── icon.png
-│ └── fonts/
-│ ├── porsche-next-latin-regular.woff2
-│ ├── porsche-next-latin-semi-bold.woff2
-│ └── SK Porsche.ttf
+- **porsche-911-hero/**
+-**│── index.html # Landing Page (Hero Section with GSAP animations)-**
+-**│── css/-**
+-**│ └── style.css # Styling for the landing page-**
+-**│── js/-**
+-**│ └── script.js # GSAP animations & interactivity-**
+-**│── asset/-**
+-**│ ├── car.png-**
+-**│ ├── car2.png-**
+-**│ ├── car3.png-**
+-**│ ├── Porsche 911 GT3 RS.mp4-**
+-**│ ├── icon.png-**
+-**│ └── fonts/-**
+-**│ ├── porsche-next-latin-regular.woff2-**
+-**│ ├── porsche-next-latin-semi-bold.woff2-**
+-**│ └── SK Porsche.ttf-**
 
 
 ---
