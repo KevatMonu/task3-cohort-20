@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Porsche Cars Entrance with Smoke</title>
+  <style>
+    body {
+      margin: 0;
+      background: #000;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    .scene {
+      position: relative;
+      width: 100%;
+      height: 100%;
+    }
+
+    /* Cars */
+    .car-image, .car2-image, .car3-image {
+      position: absolute;
+      bottom: 2.5vw;
+      z-index: 3;
+      width: 20vw;
+      cursor: pointer;
+      transition: filter 0.3s ease;
+    }
+
+    .car-image { left: -20vw; }
+    .car2-image { left: -30vw; }
+    .car3-image { left: -40vw; }
+
+    /* Smoke (starts hidden) */
+    .smoke {
+      position: absolute;
+      bottom: 2vw;
+      width: 25vw;
+      opacity: 0;
+      z-index: 2;
+      pointer-events: none;
+    }
+
+    #smoke1 { left: -20vw; }
+    #smoke2 { left: -30vw; }
+    #smoke3 { left: -40vw; }
+  </style>
+</head>
+<body>
+  <div class="scene">
+    <!-- Smoke for each car -->
+    <img src="./asset/smoke.png" alt="Smoke" class="smoke" id="smoke1">
+    <img src="./asset/smoke.png" alt="Smoke" class="smoke" id="smoke2">
+    <img src="./asset/smoke.png" alt="Smoke" class="smoke" id="smoke3">
+
+    <!-- Cars -->
+    <img src="./asset/car.png" class="car-image" alt="Porsche GT3 RS" id="carImage"/>
+    <img src="./asset/car2.png" class="car2-image" alt="Porsche GT3 RS" id="car2Image"/>
+    <img src="./asset/car3.png" class="car3-image" alt="Porsche GT3 RS" id="car3Image"/>
+  </div>
+
+  <!-- GSAP -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script>
+    function CarEntrance() {
+      // Car 1 + Smoke
+      gsap.to("#carImage", {
+        left: "80vw",
+        duration: 5,
+        ease: "power3.out",
+        onStart: () => playSmoke("#smoke1"),
+        onComplete: () => hideSmoke("#smoke1")
+      });
+
+      // Car 2 + Smoke
+      gsap.to("#car2Image", {
+        left: "70vw",
+        duration: 5,
+        delay: 1.5,
+        ease: "power3.out",
+        onStart: () => playSmoke("#smoke2"),
+        onComplete: () => hideSmoke("#smoke2")
+      });
+
+      // Car 3 + Smoke
+      gsap.to("#car3Image", {
+        left: "60vw",
+        duration: 5,
+        delay: 2,
+        ease: "power3.out",
+        onStart: () => playSmoke("#smoke3"),
+        onComplete: () => hideSmoke("#smoke3")
+      });
+    }
+
+    function playSmoke(smokeId) {
+      let smoke = document.querySelector(smokeId);
+      gsap.set(smoke, {opacity: 0.6, y: 0});
+      
+      gsap.to(smoke, {
+        y: -80,
+        opacity: 0,
+        duration: 2,
+        repeat: 3,
+        ease: "sine.out",
+        onRepeat: () => gsap.set(smoke, {y: 0, opacity: 0.6})
+      });
+    }
+
+    function hideSmoke(smokeId) {
+      let smoke = document.querySelector(smokeId);
+      gsap.to(smoke, {opacity: 0, duration: 0.5});
+    }
+
+    // Glow hover effect
+    function CarGlow() {
+      const cars = document.querySelectorAll('.car-image, .car2-image, .car3-image');
+
+      cars.forEach((car) => {
+        car.addEventListener('mouseenter', () => {
+          gsap.to(car, {
+            scale: 1.05,
+            filter: 'drop-shadow(0 0 30px rgba(255, 255, 255, 0.6))',
+            duration: 0.4,
+            ease: 'power2.out'
+          });
+        });
+
+        car.addEventListener('mouseleave', () => {
+          gsap.to(car, {
+            scale: 1,
+            filter: 'drop-shadow(0 0 0px rgba(255, 255, 255, 0))',
+            duration: 0.4,
+            ease: 'power2.out'
+          });
+        });
+      });
+    }
+
+    CarGlow();
+    CarEntrance();
+  </script>
+</body>
+</html>
